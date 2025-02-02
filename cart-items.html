@@ -15,8 +15,8 @@
             </header>
             <nav>
                 <ul >
-                    <li><a class="menu-button back-button " href="index.html"><i class="bi bi-arrow-left-square"></i></i>Continue shopping</li>
-                    <li><a class="menu-button cart-button active" href="cart-items.html"><i class="bi bi-bag-plus"></i>Cart </a></li>
+                    <li><a class="menu-button back-button " href="index.html"><i class="bi bi-arrow-left-square"></i></i>Continue shopping
+                    <a class="menu-button cart-button active" href="cart-items.html"><i class="bi bi-bag-plus"></i>Cart </a></li>
                 </ul>
             </nav>
             <footer>
@@ -26,8 +26,8 @@
         <main>
             <h2 class="main-title">Cart</h2>
             <div class="cart-container">
-                <p class="empty-cart">Your cart is empty<i class="bi bi-heartbreak"></i></p>
-                <div class="cart-products">
+                <p class="empty-cart">Your cart is empty. <i class="bi bi-heartbreak"></i></p>
+                <div class="cart-products disabled">
 
                     <div class="cart-product">
 
@@ -50,20 +50,21 @@
                         </div>
                         <button class="cart-product-delete"><i class="bi bi-trash-fill"></i></button>
                     </div>
-
-                </div>
-                <div class="cart-actions">
+                    
+                <div class="cart-actions disabled">
                     <div class="cart-actions-left">
-                        <buttom class="cart-empty-cart">Empty cart</buttom>
+                        <button class="cart-empty-cart">Empty cart</button>
                     </div>
                     <div class="cart-actions-rigth">
                         <div class="cart-actions-total">
                             <p>total:</p>
-                            <p id="total">$</p>
+                            <p id="total">$55</p>
                         </div>
                         <button class="cart-actions-buy">Buy now</button>
                     </div>
                 </div>
+                 <p class="purchase-cart disabled">Thank you for your purchase. <i class="bi bi-emoji-smile-fill"></i></p>
+
             </div>
         </main>
     </div>

@@ -124,6 +124,17 @@ aside {
     margin-top: 2rem;
 }
 
+.number {
+    background-color: white;
+    color: var(--main-color);
+    padding:.15rem .25rem;
+    border-radius: .25rem;
+}
+
+.cart-button.active .number {
+    background-color: var(--main-color);
+    color: white;
+}
 main {
     background-color: white;
     margin: 1rem;
@@ -185,9 +196,15 @@ main {
 
 /* Cart */
 
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.purchase-cart,
 .empty-cart {
     color: var(--main-color);
-    display: none;
+    
 }
 
 .cart-products {
@@ -221,4 +238,52 @@ main {
     background-color: transparent;
     color: var(--red-color);
     cursor: pointer;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-empty-cart {
+    border: 0;
+    background-color:rgba(214, 204, 204, 0.196);
+    padding: .8rem;
+    border-radius: 1rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.cart-actions-rigth {
+    display: flex;
+
+}
+
+.cart-actions-total {
+    display: flex;
+    background-color:rgba(214, 204, 204, 0.196);
+    padding: .8rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+}
+
+.cart-actions-buy {
+    border: 0;
+    background-color:var(--main-color);
+    padding: .8rem;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+
+}
+
+.disabled {
+    display: none;
 }
