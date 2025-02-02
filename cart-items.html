@@ -26,49 +26,30 @@
         <main>
             <h2 class="main-title">Cart</h2>
             <div class="cart-container">
-                <p class="empty-cart">Your cart is empty. <i class="bi bi-heartbreak"></i></p>
-                <div class="cart-products disabled">
+                <p id="empty-cart" class="empty-cart">Your cart is empty. <i class="bi bi-heartbreak"></i></p>
 
-                    <div class="cart-product">
-
-                        <img class="cart-product-image" src="./img/Oakley/Oakley-one.jpg" alt="">
-                        <div class="cart-product-title">
-                            <small>Title</small>
-                            <h3>Title</h3>
-                        </div>
-                        <div class="cart-product-quantity">
-                            <small>Quantity</small>
-                            <p>1</p>
-                        </div>
-                        <div class="cart-product-price">
-                            <small>Price</small>
-                            <p>$33</p>
-                        </div>
-                        <div class="cart-product-subtotal">
-                            <small>Subtotal</small>
-                            <p>$44</p>
-                        </div>
-                        <button class="cart-product-delete"><i class="bi bi-trash-fill"></i></button>
-                    </div>
+                <div id="cart-products"  class="cart-products disabled">
+      
+                </div>
                     
-                <div class="cart-actions disabled">
+                <div id="cart-actions" class="cart-actions disabled">
                     <div class="cart-actions-left">
-                        <button class="cart-empty-cart">Empty cart</button>
+                        <button id="cart-empty-cart" class="cart-empty-cart">Empty cart</button>
                     </div>
                     <div class="cart-actions-rigth">
                         <div class="cart-actions-total">
                             <p>total:</p>
                             <p id="total">$55</p>
                         </div>
-                        <button class="cart-actions-buy">Buy now</button>
+                        <button id="cart-actions-buy" class="cart-actions-buy">Buy now</button>
                     </div>
                 </div>
-                 <p class="purchase-cart disabled">Thank you for your purchase. <i class="bi bi-emoji-smile-fill"></i></p>
+                 <p id="purchase-cart" class="purchase-cart disabled">Thank you for your purchase. <i class="bi bi-emoji-smile-fill"></i></p>
 
             </div>
         </main>
     </div>
 
-    <script src="./js/main.js"></script>
+    <script src="/js/cart-items.js"></script>
 </body>
 </html>
