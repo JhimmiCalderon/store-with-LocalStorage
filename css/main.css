@@ -285,7 +285,122 @@ main {
 
 
 }
+.header-mobile {
+    display: none;
+}
 
+.close-menu {
+    display: none;
+}
 .disabled {
     display: none;
+}
+
+
+/* Media Queries(Responsive) */
+@media screen and (max-width: 950px) {
+
+    .product-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        
+    }
+    
+}
+@media screen and (max-width: 780px) {
+
+    .product-container {
+        grid-template-columns:  1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    aside {
+        position: fixed;
+        z-index: 9;
+        background-color: var(--main-color);
+        left: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+       transition:.2s ;
+    }
+
+    .aside-visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-button.active::before,
+    .menu-button.active::after {
+        display: none;
+    }
+    main {
+        margin: 1rem;
+        margin-top: 0;
+        padding: 2rem;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header-mobile {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .header-mobile .logo {
+        color:var(--main-color-light);
+        
+    }
+
+    
+
+    .open-menu, .close-menu {
+        background-color: transparent;
+        color:black;
+        border: 0;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: block;
+    }
+
+    .cart-product{
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: .5rem;
+    }
+    .cart-product-subtotal {
+        display: none;
+    }
+
+    .cart-actions
+{
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}}
+
+@media screen and (max-width: 400px) {
+
+    .product-container {
+        grid-template-columns: 1fr;
+    }
 }

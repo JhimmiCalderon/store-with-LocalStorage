@@ -9,14 +9,19 @@
 </head>
 <body>
     <div class="wrapper">
-        <aside>
+        <header class="header-mobile">
+            <h1 class="logo">E-commerce</h1>
+            <button id="open-menu" class="open-menu"><i class="bi bi-three-dots-vertical"></i></button>
+        </header>
+        <aside  >
+            <button id="close-menu" class="close-menu"><i class="bi bi-x-lg"></i></button>
             <header>
                 <h1 class="logo">E-commerce</h1>
             </header>
             <nav>
-                <ul >
-                    <li><a class="menu-button back-button " href="index.html"><i class="bi bi-arrow-left-square"></i></i>Continue shopping
-                    <a class="menu-button cart-button active" href="cart-items.html"><i class="bi bi-bag-plus"></i>Cart </a></li>
+                <ul>
+                    <li><a class="menu-button back-button " href="index.html"><i class="bi bi-arrow-left-square"></i>Continue shopping</a></li>
+                    <li><a class="menu-button cart-button active" href="cart-items.html"><i class="bi bi-bag-plus"></i>Cart </a></li>
                 </ul>
             </nav>
             <footer>
@@ -39,7 +44,7 @@
                     <div class="cart-actions-rigth">
                         <div class="cart-actions-total">
                             <p>total:</p>
-                            <p id="total">$55</p>
+                            <p id="total"></p>
                         </div>
                         <button id="cart-actions-buy" class="cart-actions-buy">Buy now</button>
                     </div>
@@ -50,6 +55,8 @@
         </main>
     </div>
 
+
     <script src="/js/cart-items.js"></script>
+    <script src="/js/menu.js"></script>
 </body>
 </html>
