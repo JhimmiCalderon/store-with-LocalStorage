@@ -364,6 +364,9 @@ main {
         color:var(--main-color-light);
         
     }
+    .logo {
+        display: none;
+    }
 
     
 

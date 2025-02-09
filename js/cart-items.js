@@ -75,6 +75,25 @@ function updateAddButtonDelete() {
 }
 
 function deleteToCart(e) {
+    Toastify({
+        text: "Product Delete",
+        duration: 2000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #16C47F,rgb(133, 208, 171))",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
     let idButton = e.currentTarget.id;    
     const index = productInCart.findIndex(product => product.id === idButton)
     productInCart.splice(index,1)
@@ -86,9 +105,29 @@ function deleteToCart(e) {
 emptyButton.addEventListener("click",emptyToCart);
 
 function emptyToCart() {
-    productInCart.length = 0
-    localStorage.setItem("product-In-Cart",JSON.stringify(productInCart));
-    loadProducts();
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to empty your cart? This action can't be undone!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, empty the cart!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            productInCart.length = 0
+            localStorage.setItem("product-In-Cart",JSON.stringify(productInCart));
+            loadProducts();
+          Swal.fire({
+            title: "Cart emptied!",
+            text: "Your cart has been cleared.",
+            icon: "success"
+            
+          });
+        }
+      });
+      
+   
 }
 
 function updateTotal() {

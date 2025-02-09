@@ -1,95 +1,11 @@
-const products = [
-    {
-        id: "oakley-01",
-        title : "Oakley T-shirt",
-        image: "./img/Oakley/Oakley-one.jpg",
-        category: {
-            nam: "Oakley",
-            id: "Oakley"
-        },
-        price: 95000
-    },
-    {
-        id: "oakley-02",
-        title : "Oakley T-shirt",
-        image: "./img/Oakley/Oakley-two.jpg",
-        category: {
-            nam: "Oakley",
-            id: "Oakley"
-        },
-        price: 90000
-    },
-    {
-        id: "oakley-03",
-        title : "Oakley T-shirt",
-        image: "./img/Oakley/Oakley-three.jpg",
-        category: {
-            nam: "Oakley",
-            id: "Oakley"
-        },
-        price: 95000
-    },
-    {
-        id: "oakley-04",
-        title : "Oakley T-shirt",
-        image: "./img/Oakley/Oakley-four.jpg",
-        category: {
-            nam: "Oakley",
-            id: "Oakley"
-        },
-        price: 95000
-    },
-    {
-        id: "quiksilver-01",
-        title : "Quiksilver T-shirt",
-        image: "./img/Quiksilver/Quiksilver-one.jpg",
-        category: {
-            nam: "Quiksilver",
-            id: "Quiksilver"
-        },
-        price: 90000
-    },
-    {
-        id: "quiksilver-02",
-        title : "Quiksilver T-shirt",
-        image: "./img/Quiksilver/Quiksilver-two.jpg",
-        category: {
-            nam: "Quiksilver",
-            id: "Quiksilver"
-        },
-        price: 90000
-    },
-    {
-        id: "quiksilver-03",
-        title : "Quiksilver T-shirt",
-        image: "./img/Quiksilver/Quiksilver-three.jpg",
-        category: {
-            nam: "Quiksilver",
-            id: "Quiksilver"
-        },
-        price: 90000
-    },
-    {
-        id: "alpinestars-01",
-        title : "AlpineStars T-shirt",
-        image: "./img/AlpineStars/AlpineStars-one.jpg",
-        category: {
-            nam: "AlpineStars",
-            id: "AlpineStars"
-        },
-        price: 85000
-    },
-    {
-        id: "alpinestars-02",
-        title : "AlpineStars T-shirt",
-        image: "./img/AlpineStars/AlpineStars-two.jpg",
-        category: {
-            nam: "AlpineStars",
-            id: "AlpineStars"
-        },
-        price: 90000
-    },
-]
+let products = [];
+
+fetch("./js/products.json")
+    .then(response => response.json())
+    .then(data => {
+        products = data
+        uploadProducts(products);
+    })
 
 const productContainer = document.querySelector("#product-container")
 const buttonCategory = document.querySelectorAll(".category-button")
@@ -121,7 +37,7 @@ function uploadProducts(selectedProducts) {
 
 }
 
-uploadProducts(products);
+
 
 buttonCategory.forEach(button => {
     button.addEventListener("click", (e) => {
@@ -162,6 +78,25 @@ if(productInCartLS) {
 
 
 function addToCart(e) {
+    Toastify({
+        text: "Product added",
+        duration: 2000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #16C47F,rgb(133, 208, 171))",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const idButton = e.currentTarget.id;
     const addedProducts = products.find(product => product.id === idButton);
 
